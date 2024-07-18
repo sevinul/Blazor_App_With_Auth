@@ -1,0 +1,31 @@
+﻿@page "/"
+@using System.Globalization
+@using Blazor.Client.Localization
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<Translation> Translate
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<!-- SU Translation -->
+<p></p>
+<h2>Translation Examples</h2>
+@foreach (var language in languages)
+{
+    // Change the culture
+    SetCulture(language);
+    <p>Example text translated to @language: @Translate["Example"]</p>
+}
+
+@code {
+    private string[] languages = { "en", "de", "fr", "tr" };
+
+    private void SetCulture(string language)
+    {
+        var culture = new CultureInfo(language);
+        CultureInfo.DefaultThreadCurrentUICulture = culture;
+    }
+}

@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+	<TargetFramework>net9.0</TargetFramework>
+	<BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<PackageReference Include="Blazor.WebAssembly.DynamicCulture" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.0-preview.6.24328.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.0-preview.6.24328.4" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.HttpClient" Version="3.2.0-preview.5.*" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="9.0.0-preview.6.24328.4" />
+	<PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.0-preview.6.24327.7" />
+	<PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.0-preview.6.24328.4" />
+    <PackageReference Include="System.Net.Http.Json" Version="9.0.0-preview.6.24327.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\Blazor_App_With_Auth.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<EmbeddedResource Update="Localization\Translation.de.resx">
+		<SubType>Designer</SubType>
+	</EmbeddedResource>
+	<EmbeddedResource Update="Localization\Translation.en.resx">
+		<SubType>Designer</SubType>
+	</EmbeddedResource>
+	<EmbeddedResource Update="Localization\Translation.fr.resx">
+		<SubType>Designer</SubType>
+	</EmbeddedResource>
+	<EmbeddedResource Update="Localization\Translation.tr.resx">
+		<SubType>Designer</SubType>
+	</EmbeddedResource>
+  </ItemGroup>
+</Project>
